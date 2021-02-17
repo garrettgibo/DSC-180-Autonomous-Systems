@@ -15,6 +15,7 @@ TARGETS = {
     "visualize": analysis.visualize_all,
     "cep": analysis.cep,
     "test": data.clean_gps,
+    "get_path": analysis.get_path,
 }
 
 CONFIGS = {
@@ -25,6 +26,7 @@ CONFIGS = {
     "visualize": "config/visualization.json",
     "cep": "config/cep.json",
     "test": "config/test.json",
+    "get_path": "config/get_path.json",
 }
 
 
