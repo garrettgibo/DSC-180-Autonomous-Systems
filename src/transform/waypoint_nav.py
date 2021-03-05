@@ -153,7 +153,7 @@ def navigate_to_waypoint_x(curr_pos, curr_heading, path):
         curr_waypt = path.poses[i]
         # Calculate the distance between the current waypoint and endpoint. 
         dist_waypt_endpt = euclidean_dist(endpt.pose.position.x, curr_waypt.pose.position.x, endpt.pose.position.y, curr_waypt.pose.position.y)
-        # Calculate the distance between the current waypoint and current vehicle position. 
+        # Calculate the distance between the endpoint and current vehicle position. 
         dist_waypt_pt = euclidean_dist(endpt.pose.position.x, curr_pos.x, endpt.pose.position.y, curr_pos.y)
 
         print(dist_waypt_endpt, dist_waypt_pt)
