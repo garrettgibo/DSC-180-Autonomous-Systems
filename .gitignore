@@ -13,3 +13,4 @@ CEP
 build/
 devel/
 logs/
+*.bak
