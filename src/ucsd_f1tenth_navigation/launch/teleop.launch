@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <group ns="joy">
+    <arg name="joy_teleop_config" default="$(find ucsd_f1tenth_navigation)/config/joy_teleop.yaml" />
+
+    <rosparam file="$(arg joy_teleop_config)" command="load" />
+    <node pkg="joy" type="joy_node" name="joy_node" />
+    <node pkg="ucsd_f1tenth_navigation" type="joy_teleop.py" name="joy_teleop" />
+    <!-- <node pkg="ucsd_f1tenth_navigation" type="waypoint_logger.py" name="odom_waypoint_logger" /> -->
+  </group>
+</launch>
