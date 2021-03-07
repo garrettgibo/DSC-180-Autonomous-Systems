@@ -16,10 +16,10 @@
           name="joy_teleop" />
 
 	  <!--  **************** Waypoint Logger ****************  -->
-    <node pkg="navigation"
-          type="waypoint_logger.py"
-          name="odom_waypoint_logger" >
-      <param name="wp_log_output" value="$(arg wp_log_output)" />
-    </node>
+    <!-- <node pkg="navigation" -->
+    <!--       type="waypoint_logger.py" -->
+    <!--       name="odom_waypoint_logger" > -->
+    <!--   <param name="wp_log_output" value="$(arg wp_log_output)" /> -->
+    <!-- </node> -->
   </group>
 </launch>

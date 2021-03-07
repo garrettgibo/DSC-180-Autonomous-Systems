@@ -24,7 +24,7 @@
   </include>
 
   <!-- Manual control -->
-  <!-- <include file="$(find navigation)/launch/teleop.launch" /> -->
+  <include file="$(find navigation)/launch/manual_control.launch" />
 
   <include file="$(find navigation)/launch/waypoint_follower.launch" />
 
