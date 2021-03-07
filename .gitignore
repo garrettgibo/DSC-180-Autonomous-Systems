@@ -7,3 +7,9 @@ mav*
 vis
 gps_data
 CEP
+
+# ROS creations
+.catkin_tools/
+build/
+devel/
+logs/
