@@ -7,28 +7,28 @@
   <arg name="new_wp_topic" default="/waypoints/goal" />
 
   <arg name="global_path_csv"
-       default="$(find ucsd_f1tenth_navigation)/paths/ucsd_west_waypoints.csv"/>
+       default="$(find navigation)/paths/ucsd_west_waypoints.csv"/>
 
   <group ns="$(arg namespace)">
 	  <!--  **************** Visualisation ****************  -->
-	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ucsd_f1tenth_navigation)/rviz/navigation.rviz"/>
+	  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation)/rviz/navigation.rviz"/>
 
 	  <!--  **************** Nav Sat Transform ****************  -->
-    <include file="$(find ucsd_f1tenth_navigation)/launch/navsat_transform.launch" />
+    <include file="$(find navigation)/launch/navsat_transform.launch" />
 
 	  <!--  **************** Robot Localization/EKF ****************  -->
     <node pkg="robot_localization"
           type="ekf_localization_node"
           name="ekf_localization_with_gps">
       <rosparam command="load"
-                file="$(find ucsd_f1tenth_navigation)/config/robot_localization.yaml" />
+                file="$(find navigation)/config/robot_localization.yaml" />
     </node>
 
 	  <!--  **************** Map Server ****************  -->
-    <include file="$(find ucsd_f1tenth_navigation)/launch/map_server.launch" />
+    <include file="$(find navigation)/launch/map_server.launch" />
 
 	  <!--  **************** Global Path Generator ****************  -->
-    <node pkg="ucsd_f1tenth_navigation"
+    <node pkg="navigation"
           type="create_global_path.py"
           name="create_global_path" >
       <param name="global_path_csv" value="$(arg global_path_csv)"/>
@@ -36,7 +36,7 @@
 
 	  <!--  **************** Waypoint Follower ****************  -->
     <node name="follow_waypoints"
-          pkg="ucsd_f1tenth_navigation"
+          pkg="navigation"
           type="waypoint_follower.py" >
       <param name="ackermann_cmd_topic" value="$(arg ackermann_cmd_topic)" />
       <param name="odom_topic" value="$(arg odom_topic)" />

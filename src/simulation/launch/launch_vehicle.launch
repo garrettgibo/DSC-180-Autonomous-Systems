@@ -46,7 +46,7 @@ limitations under the License.
   <arg name="odom_topic" default="/vehicle/odom" />
   <arg name="wheelbase" default="0.3" />
 
-  <include file="$(find ucsd_f1tenth_description)/launch/f1tenth_ackermann.launch">
+  <include file="$(find robot_description)/launch/f1tenth_ackermann.launch">
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
 
@@ -61,17 +61,17 @@ limitations under the License.
     <!-- Load the joint controllers. One of these publishes the joint states
          to joint_states. -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner"
-          args="$(find ucsd_f1tenth_gazebo)/config/traxxas_rally_joint_ctrlr_params.yaml"/>
+          args="$(find simulation)/config/traxxas_rally_joint_ctrlr_params.yaml"/>
 
     <!-- Control the steering, axle, and shock absorber joints. -->
-    <node name="ackermann_controller" pkg="ucsd_f1tenth_gazebo"
+    <node name="ackermann_controller" pkg="simulation"
           type="ackermann_controller.py">
       <param name="cmd_timeout" value="$(arg cmd_timeout)"/>
-      <rosparam file="$(find ucsd_f1tenth_gazebo)/config/traxxas_rally_ackermann_ctrlr_params.yaml" command="load"/>
+      <rosparam file="$(find simulation)/config/traxxas_rally_ackermann_ctrlr_params.yaml" command="load"/>
     </node>
 
     <!-- Convert cmd_vel to ackermann drive -->
-    <node name="cmd_vel_to_ackermann_drive" pkg="ucsd_f1tenth_gazebo"
+    <node name="cmd_vel_to_ackermann_drive" pkg="simulation"
           type="cmd_vel_to_ackermann_drive.py" >
       <param name="twist_cmd_topic" value="$(arg twist_cmd_topic)" />
       <param name="ackermann_cmd_topic" value="$(arg ackermann_cmd_topic)" />
@@ -79,7 +79,7 @@ limitations under the License.
     </node>
 
     <!-- Publishe odometry transform -->
-    <node name="odometry_tf_publisher" pkg="ucsd_f1tenth_gazebo"
+    <node name="odometry_tf_publisher" pkg="simulation"
           type="odometry_tf_publisher.py" >
       <param name="odom_topic" value="$(arg odom_topic)" />
     </node>

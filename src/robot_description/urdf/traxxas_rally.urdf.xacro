@@ -426,6 +426,6 @@ limitations under the License.
   </gazebo>
 
   <!-- Include Sensor Plugins -->
-  <xacro:include filename="$(find ucsd_f1tenth_description)/urdf/sensors.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/sensors.xacro"/>
 
 </robot>

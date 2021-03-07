@@ -19,5 +19,4 @@
     <remap from="/odometry/filtered" to="/vehicle/odom" />
 
   </node>
-
 </launch>

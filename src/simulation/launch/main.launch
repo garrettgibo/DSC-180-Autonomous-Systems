@@ -6,14 +6,14 @@
   <arg name="starting_y" default="2.35"/>
 
   <!-- simulation -->
-  <include file="$(find ucsd_f1tenth_gazebo)/launch/ucsd_track_v1_world.launch">
+  <include file="$(find simulation)/launch/ucsd_track_v1_world.launch">
     <arg name="gui" value="$(arg gui)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="namespace" value="gazebo" />
   </include>
 
   <!-- robot -->
-  <include file="$(find ucsd_f1tenth_gazebo)/launch/launch_vehicle.launch">
+  <include file="$(find simulation)/launch/launch_vehicle.launch">
     <arg name="x" value="$(arg starting_x)"/>
     <arg name="y" value="$(arg starting_y)"/>
     <arg name="z" value="0.05"/>
@@ -24,9 +24,9 @@
   </include>
 
   <!-- Manual control -->
-  <!-- <include file="$(find ucsd_f1tenth_navigation)/launch/teleop.launch" /> -->
+  <!-- <include file="$(find navigation)/launch/teleop.launch" /> -->
 
-  <include file="$(find ucsd_f1tenth_navigation)/launch/waypoint_follower.launch" />
+  <include file="$(find navigation)/launch/waypoint_follower.launch" />
 
 
 </launch>

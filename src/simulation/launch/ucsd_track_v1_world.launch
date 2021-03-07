@@ -7,7 +7,7 @@
 
   <group ns="$(arg namespace)">
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find ucsd_f1tenth_gazebo)/worlds/ucsd_track_v1.world"/>
+      <arg name="world_name" value="$(find simulation)/worlds/ucsd_track_v1.world"/>
       <arg name="paused" value="$(arg paused)"/>
       <arg name="use_sim_time" value="true"/>
       <arg name="gui" value="$(arg gui)"/>
