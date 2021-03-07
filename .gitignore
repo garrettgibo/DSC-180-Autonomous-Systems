@@ -7,3 +7,13 @@ mav*
 vis
 gps_data
 CEP
+
+# ROS
+.catkin_tools/
+build/
+devel/
+logs/
+*.bak
+
+# Extra ROS packages
+realsense_gazebo_plugin/
