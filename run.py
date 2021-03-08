@@ -14,6 +14,7 @@ TARGETS = {
     "cep": analysis.cep,
     "test": data.clean_gps,
     "get_path": analysis.get_path,
+    "ground_truth": analysis.plot_ground_truth,
 }
 
 CONFIGS = {
@@ -24,6 +25,7 @@ CONFIGS = {
     "cep": "config/cep.json",
     "test": "config/test.json",
     "get_path": "config/get_path.json",
+    "ground_truth": "config/ground_truth.json",
 }
 
 
