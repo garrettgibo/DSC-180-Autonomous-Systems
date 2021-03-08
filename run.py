@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import argparse
-import sys
 import json
 
 from src import analysis, data, robot
@@ -10,7 +9,6 @@ from src import analysis, data, robot
 TARGETS = {
     "robot": robot.Robot,
     "robot_client": robot.RobotClient,
-    "collect_gps": data.GPSLogger,
     "clean_data": data.clean_gps,
     "visualize": analysis.visualize_all,
     "cep": analysis.cep,
@@ -21,7 +19,6 @@ TARGETS = {
 CONFIGS = {
     "robot": "config/robot_sim.json",
     "robot_client": "config/robot_client.json",
-    "collect_gps": "config/collect_gps.json",
     "clean_data": "config/clean_gps.json",
     "visualize": "config/visualization.json",
     "cep": "config/cep.json",
