@@ -29,7 +29,10 @@ roslaunch simulation main.launch
 ```
 
 This will launch a gazebo simulation containing a test vehicle with sensors that
-were used for this project.
+were used for this project. Because the simulation requires both ROS and gazebo
+which have large graphical portions, these packages must be run a system that
+has ROS setup already and also has some type of grapical interface, for example
+X on linux based systems.
 
 ### Analysis
 
