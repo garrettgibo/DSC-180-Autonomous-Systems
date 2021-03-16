@@ -7,25 +7,25 @@ from src import analysis, data, robot
 
 
 TARGETS = {
-    "robot": robot.Robot,
-    "robot_client": robot.RobotClient,
-    "clean_data": data.clean_gps,
-    "visualize": analysis.visualize_all,
     "cep": analysis.cep,
-    "test": data.clean_gps,
+    "clean_data": data.clean_gps,
     "get_path": analysis.get_path,
     "ground_truth": analysis.plot_ground_truth,
+    "robot": robot.Robot,
+    "robot_client": robot.RobotClient,
+    "test": data.clean_gps,
+    "visualize": analysis.visualize_all,
 }
 
 CONFIGS = {
-    "robot": "config/robot_sim.json",
-    "robot_client": "config/robot_client.json",
-    "clean_data": "config/clean_gps.json",
-    "visualize": "config/visualization.json",
     "cep": "config/cep.json",
-    "test": "config/test.json",
+    "clean_data": "config/clean_gps.json",
     "get_path": "config/get_path.json",
     "ground_truth": "config/ground_truth.json",
+    "robot": "config/robot_sim.json",
+    "robot_client": "config/robot_client.json",
+    "test": "config/test.json",
+    "visualize": "config/visualization.json",
 }
 
 
